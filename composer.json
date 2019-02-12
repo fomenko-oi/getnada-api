@@ -1,0 +1,19 @@
+{
+    "name": "truehero/getnada-api",
+    "description": "PHP library for work with getnada.com private API",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Fomenko Alexander",
+            "email": "fomenko.a@i.ua"
+        }
+    ],
+    "require": {
+        "guzzlehttp/guzzle": "^6.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "Truehero\\": "src/"
+        }
+    }
+}
