@@ -2,7 +2,7 @@ Simple library for reading emails from inbox getnada.com
 
 ## Install
 For install use composer, and call in the command line:
-`composer require fomenko-oi/getnada-api`
+`composer require truehero/getnada-api`
 
 
 ## Basic usage of the lib
