@@ -1,15 +1,34 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Alexander
- * Date: 12.02.2019 14:39
- * Contacts: t.me/truehero fomenko.a@i.ua
- */
 
 namespace Truehero\Entities\Attach;
 
+use Truehero\Utils;
 
 class Size
 {
+    /**
+     * @var int
+     */
+    private $size;
 
+    public function __construct(int $size)
+    {
+        $this->size = $size;
+    }
+
+    /**
+     * @return int
+     */
+    public function getSize()
+    {
+        return $this->size;
+    }
+
+    /**
+     * @return string
+     */
+    public function format()
+    {
+        return Utils::formatBytes($this->size);
+    }
 }

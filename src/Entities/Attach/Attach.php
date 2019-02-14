@@ -1,6 +1,6 @@
 <?php
 
-namespace Truehero\Entities\Message;
+namespace Truehero\Entities\Attach;
 
 class Attach
 {
@@ -17,7 +17,7 @@ class Attach
      */
     private $temp_name;
     /**
-     * @var int
+     * @var Size
      */
     private $size;
     /**
@@ -35,8 +35,8 @@ class Attach
         $this->id = $id;
         $this->name = $name;
         $this->temp_name = $temp_name;
-        $this->size = $size;
-        $this->type = $type;
+        $this->size = new Size($size);
+        $this->type = $this->parseMimeType($type);
     }
 
     /**
@@ -64,9 +64,9 @@ class Attach
     }
 
     /**
-     * @return int
+     * @return Size
      */
-    public function getSize(): int
+    public function getSize(): Size
     {
         return $this->size;
     }
@@ -77,5 +77,14 @@ class Attach
     public function getType(): string
     {
         return $this->type;
+    }
+
+    /**
+     * @param string $type
+     * @return string
+     */
+    protected function parseMimeType(string $type): string
+    {
+        return array_shift(explode(';', $type));
     }
 }
